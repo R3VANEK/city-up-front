@@ -43,7 +43,7 @@ const Nav = ({navigation}) => {
             <Image style={styles.image} source={require('../assets/icons/news.png')} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.element} onPress={() => navigation.navigate('Pools')}>
+        <TouchableOpacity style={styles.element} onPress={() => navigation.navigate('Polls')}>
             <Image style={styles.image} source={require('../assets/icons/pool.png')}/>
         </TouchableOpacity>
 

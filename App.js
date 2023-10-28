@@ -21,7 +21,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="News" component={News} />
-        <Stack.Screen name="Pools" component={Home} />
+        <Stack.Screen name="Polls" component={Home} />
         <Stack.Screen name="City" component={Home} />
         <Stack.Screen name="Profile" component={Home} />
       </Stack.Navigator>
