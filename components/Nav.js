@@ -28,8 +28,8 @@ const Nav = ({navigation}) => {
             height:44
         },
         image: {
-            width:40,
-            height:40
+            width:30,
+            height:30
         }
     });
 
