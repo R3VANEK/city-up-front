@@ -17,8 +17,6 @@ const Nav = ({navigation}) => {
             marginBottom:3,
             position:'absolute',
             bottom:5,
-            width:340,
-            left:40,
             borderRadius:15
         },
 

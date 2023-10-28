@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   btm : {
     justifySelf:"flex-end",
     flex:1,
+    width: "100%"
 
   },
   bin:{

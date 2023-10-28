@@ -12,32 +12,45 @@ const TopNav = ({image, pageTitle, pageDescription, showButton, link}) => {
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection:"row",
-            width:100,
             
             justifySelf:"flex-start",
-            alignSelf: "stretch",
             flex:1,
             marginTop:0,
             position:'absolute',
             top:0,
-            width:100
-            
+            borderBottomRightRadius: 60,
+            overflow: 'hidden'
            
         },
 
-        element : {
-            alignItems:"center",
-            justifyContent:"center",
-            flex:1,
-            flexDirection:"column"
+        image: {
+            width:'100%',
+            height:300,
+            borderBottomRightRadius: 60
         },
-        text:{
-            flex:1
+
+        logo: {
+            height:70,
+            width:70,
+            top:20,
+            left:20,
+            borderRadius: 20
         },
-        font:{
-            fontSize:15,
-            color:"black", 
-            fontWeight:'bold'
+        pageTitle: {
+            color: '#ffffff',
+            fontSize: 54,
+            left: 20,
+            top:20
+        },
+
+        pageDescription:{
+            color: '#ffffff',
+            left: 10,
+            padding: 20
+        },
+        shadow: {
+            flex: 1,
+            backgroundColor: 'rgba(0,0,0,0.8)'
         }
     });
 
@@ -48,9 +61,13 @@ const TopNav = ({image, pageTitle, pageDescription, showButton, link}) => {
     <View style={[styles.container]}>
       
         <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-            <Image source={require('../assets/logo.png')} style={styles.logo}/>
-            <Text style={styles.pageTitle}>{pageTitle}</Text>
-            <Text style={styles.pageDescription}>{pageDescription}</Text>
+            <View styles={styles.shadow}>
+
+                <Image source={require('../assets/logo.png')} style={styles.logo}/>
+                <Text style={styles.pageTitle}>{pageTitle}</Text>
+                <Text style={styles.pageDescription}>{pageDescription}</Text>
+            </View>
+     
         </ImageBackground>
 
 
