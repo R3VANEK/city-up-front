@@ -2,10 +2,13 @@ import React, {useState} from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image, FlatList, Dimensions, Button, TouchableOpacity} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 
+import { ScrollView } from 'react-native';
+
+
 import Nav from '../components/Nav'
 import TopNav from '../components/TopNav'
 import NewsCard from '../components/NewsCard'
-import { ScrollView } from 'react-native-gesture-handler';
+import Search from '../components/Search'
 
 
 const News = ({navigation}) => {
@@ -58,21 +61,21 @@ const styles = StyleSheet.create({
     },
 
     scrollView: {
-        height: '20%',
-        width: '80%',
-        margin: 20,
+        height: '100%',
+        width: '100%',
         alignSelf: 'center',
-        padding: 20,
-        borderWidth: 5,
-        borderRadius: 5,
-        borderColor: 'black',
-        backgroundColor: 'lightblue'
+        flex: '1'
       },
       contentContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'lightgrey',
-        paddingBottom: 50}
+    },
+
+    articleContainer: {
+        marginTop:20,
+        width:'100%'
+    }
 
     
 
@@ -102,21 +105,31 @@ const DATA = [
 
 
   return (
-            <ScrollView 
-                style={styles.scrollView} 
-                contentContainerStyle={styles.contentContainer}
-            >
+
+    <>
+        <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
                 pageTitle="Co w trawie piszczy?" 
                 pageDescription="Przeczytaj najnowsze wiadomości z Twojej okolicy"
             />  
 
-<Nav navigation={navigation}/>
-            </ScrollView>
-       
-        
+            <Search/>
 
+            <View style={styles.articleContainer}>
+                {DATA.map((person) => {
+                    return (
+                        <NewsCard title="Przebudowa tramwajów" description="lorem ipsum sid doloro" author="Rada miasta" link="foo" />
+                    );
+                })}
+            </View>
+
+        </ScrollView>
+
+
+        <Nav navigation={navigation}/>
+    </>
+           
         
 
         

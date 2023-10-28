@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         width:350,
         alignSelf:'center',
         marginTop:30,
+        marginBottom:80
     },
 
     articleTitle:{
