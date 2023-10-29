@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         <Text style={styles.articleTitle}>{title}</Text>
         <View style={styles.authorHolder}>
             <Image source={require('../assets/icons/profile.png')} style={styles.authorImage}/>
-            <Text styles={styles.authorName}>{author}</Text>
+            <Text style={styles.authorName}>{author}</Text>
         </View>
 
         <Text style={styles.articleText}>{description}</Text>

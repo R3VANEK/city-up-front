@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Image, FlatList, Dimensions, Button, TouchableOpacity} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 
@@ -83,22 +83,26 @@ const styles = StyleSheet.create({
 
 });
 
+const [data, setData] = useState([]);
 
-const DATA = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-  ];
+useEffect(()=>{
+    fetchData();
+}, [])
 
+const fetchData = async () => {
+    try {
+      const response = await fetch('http://156.17.72.80:8000/content/polls', {
+        header: {
+            'Accept': 'application/json; charset=UTF-8'
+        }
+      });
+      const result = await response.json();
+      console.log(result)
+      setData(result);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
 
 
@@ -117,9 +121,9 @@ const DATA = [
             <Search/>
 
             <View style={styles.articleContainer}>
-                {DATA.map((person) => {
+                {data.map((poll) => {
                     return (
-                        <PollCard title="Przebudowa tramwajów" description="lorem ipsum sid doloro" author="Rada miasta" link="foo" navigation={navigation}/>
+                        <PollCard key={poll.id} title={poll.title} description={poll.description} author={poll.organization_name} image={poll.image} link="foo" navigation={navigation}/>
                     );
                 })}
             </View>

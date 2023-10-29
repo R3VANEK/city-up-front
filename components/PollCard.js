@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     article:{
         color:'red',
         backgroundColor:'#ffffff',
-        height:400,
+        height:500,
         borderRadius:15,
         width:350,
         alignSelf:'center',
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft:10,
         position: 'absolute',
-        top:200
+        top:230
     },
     authorImage: {
         width: 30,
@@ -71,15 +71,28 @@ const styles = StyleSheet.create({
     },
 
     buttonHolder: {
-        width: 300,
+        width: 340,
         alignSelf: 'center',
         marginBottom:10,
         position: 'absolute',
         bottom:0,
         textAlign: 'center',
-        flex: 1,
         justifyContent  : 'center',
         alignContent: 'center',
+        flexDirection: 'row'
+    },
+
+    voteHolder: {
+        flexDirection: 'row',
+        marginLeft:50,
+        justifyContent: 'center',
+        alignContent: 'center'
+    },
+    likeTrue: {
+        borderColor: '#82ED50',
+        borderWidth: 2,
+        borderRadius:20,
+        padding: 5
     }
 
 });
@@ -94,16 +107,24 @@ const styles = StyleSheet.create({
 
   return (
     <View style={styles.article}>
-        <Image source={require('../assets/wroc1.jpg')} style={styles.articleImage}/>
+        <Image source={{
+            uri: image,
+            }} 
+            style={styles.articleImage}/>
         <Text style={styles.articleTitle}>{title}</Text>
         <View style={styles.authorHolder}>
             <Image source={require('../assets/icons/profile.png')} style={styles.authorImage}/>
-            <Text styles={styles.authorName}>{author}</Text>
+            <Text style={styles.authorName}>{author}</Text>
         </View>
 
         <Text style={styles.articleText}>{description}</Text>
         <View style={styles.buttonHolder}>
             <AppButton link={link} navigation={navigation} target={'Home'}/>
+            <View style={styles.voteHolder}>
+                <View style={styles.likeTrue}>
+                    <Image source={require('../assets/icons/like.png')}/>
+                </View>
+            </View>
         </View>
 
     </View> 
