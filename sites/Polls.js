@@ -114,8 +114,8 @@ const fetchData = async () => {
         <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
-                pageTitle="Decyduj!" 
-                pageDescription="Podejmij walkę o lepsze jutro!"
+                pageTitle="Decide!" 
+                pageDescription="Give your opinion in polls to better your city "
             />  
 
             <Search/>

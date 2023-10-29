@@ -110,8 +110,8 @@ const DATA = [
         <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
-                pageTitle="Lokalne organizacje" 
-                pageDescription="Poznaj organizacje działające w Twojej okolicy"
+                pageTitle="Local organisations" 
+                pageDescription="Find organisations in your local area"
             />  
 
             <Search/>

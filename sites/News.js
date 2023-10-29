@@ -114,8 +114,8 @@ const fetchData = async () => {
         <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
-                pageTitle="Co w trawie piszczy?" 
-                pageDescription="Przeczytaj najnowsze wiadomości z Twojej okolicy"
+                pageTitle="Whats new?" 
+                pageDescription="Read latests news and events in your city"
             />  
 
             <Search/>

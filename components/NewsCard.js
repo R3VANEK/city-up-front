@@ -5,7 +5,7 @@ import TopNav from '../components/TopNav'
 import AppButton from './AppButton';
 
 
-const NewsCard = ({title, author, description, image, link, navigation}) => {
+const NewsCard = ({title, author, description, image, link, navigation, horizontal}) => {
 
 
 const styles = StyleSheet.create({
@@ -24,6 +24,18 @@ const styles = StyleSheet.create({
         width:350,
         alignSelf:'center',
         marginTop:30,
+        marginBottom:80
+    },
+
+    articleH:{
+        color:'red',
+        backgroundColor:'#ffffff',
+        height:400,
+        borderRadius:15,
+        width:350,
+        alignSelf:'center',
+        marginTop:10,
+        marginLeft: 20,
         marginBottom:80
     },
 
@@ -93,7 +105,7 @@ const styles = StyleSheet.create({
 
 
   return (
-    <View style={styles.article}>
+    <View style={(!horizontal) ? styles.article : styles.articleH}>
         <Image source={{
             uri: image,
             }} 
