@@ -73,12 +73,35 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightgrey',
     },
 
-    articleContainer: {
-        marginTop:20,
-        width:'100%'
-    }
+    textContainer: {
+        paddingLeft:20,
+        paddingRight: 20,
+        width:'100%',
+        paddingBottom:20
+    },
 
-    
+    utils: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignContent: 'center',
+        width: '100%',
+        padding: 20,
+        marginTop:310
+    }, 
+    utilHolder: {
+        backgroundColor: "#55A4FA",
+        height:70,
+        width:70,
+        marginRight:20,
+        justifyContent: 'center',
+        margin: 'auto',
+        marginLeft:10,
+        borderRadius: 15,
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
 
     
 
@@ -100,6 +123,8 @@ const DATA = [
     },
   ];
 
+  const text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
 
 
 
@@ -111,22 +136,28 @@ const DATA = [
         <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
-                pageTitle={route.params} 
-                pageDescription="Poznaj organizacje działające w Twojej okolicy"
+                pageTitle={"Siema"} 
             />  
 
-            <Search/>
-
-            <View style={styles.articleContainer}>
-                <View>
-                    <Text>{JSON.stringify(route)}</Text>
+            <View style={styles.utils}>
+               
+                <View style={styles.utilHolder}>
+                    <Image source={require('../assets/icons/zoom-in.png')}/>
                 </View>
+
+                <View style={styles.utilHolder}>
+                    <Image source={require('../assets/icons/zoom-out.png')}/>
+                </View>
+
+            </View>
+
+            <View style={styles.textContainer}>
+                <Text>{text}</Text>
             </View>
 
         </ScrollView>
 
 
-        {/* <Nav navigation={navigation}/> */}
     </>
            
         

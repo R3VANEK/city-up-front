@@ -53,10 +53,6 @@ const styles = StyleSheet.create({
 const [text, onChangeText] = React.useState('');
 
 
-
-
-
-
   return (
     <View style={styles.searchHolder}>
         
