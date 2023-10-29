@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft:10,
         position: 'absolute',
-        top:200
+        top:220
     },
     authorImage: {
         width: 30,
@@ -94,7 +94,10 @@ const styles = StyleSheet.create({
 
   return (
     <View style={styles.article}>
-        <Image source={require('../assets/wroc1.jpg')} style={styles.articleImage}/>
+        <Image source={{
+            uri: image,
+            }} 
+            style={styles.articleImage}/>
         <Text style={styles.articleTitle}>{title}</Text>
         <View style={styles.authorHolder}>
             <Image source={require('../assets/icons/profile.png')} style={styles.authorImage}/>
