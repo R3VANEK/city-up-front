@@ -5,7 +5,7 @@ import TopNav from '../components/TopNav'
 import AppButton from './AppButton';
 
 
-const NewsCard = ({title, author, description, image, link, navigation, horizontal}) => {
+const OrganizationCard = ({name, description, image, link, navigation}) => {
 
 
 const styles = StyleSheet.create({
@@ -24,18 +24,6 @@ const styles = StyleSheet.create({
         width:350,
         alignSelf:'center',
         marginTop:30,
-        marginBottom:80
-    },
-
-    articleH:{
-        color:'red',
-        backgroundColor:'#ffffff',
-        height:400,
-        borderRadius:15,
-        width:350,
-        alignSelf:'center',
-        marginTop:10,
-        marginLeft: 20,
         marginBottom:80
     },
 
@@ -67,7 +55,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft:10,
         position: 'absolute',
-        top:220
+        top:200
     },
     authorImage: {
         width: 30,
@@ -105,20 +93,16 @@ const styles = StyleSheet.create({
 
 
   return (
-    <View style={(!horizontal) ? styles.article : styles.articleH}>
-        <Image source={{
-            uri: image,
-            }} 
-            style={styles.articleImage}/>
-        <Text style={styles.articleTitle}>{title}</Text>
+    <View style={styles.article}>
+        <Image source={require('../assets/wroc1.jpg')} style={styles.articleImage}/>
+        <Text style={styles.articleTitle}>{name}</Text>
         <View style={styles.authorHolder}>
             <Image source={require('../assets/icons/profile.png')} style={styles.authorImage}/>
-            <Text style={styles.authorName}>{author}</Text>
         </View>
 
         <Text style={styles.articleText}>{description}</Text>
         <View style={styles.buttonHolder}>
-            <AppButton link={link} navigation={navigation} target={'NewsContent'}/>
+            <AppButton link={link} navigation={navigation} target={'Home'}/>
         </View>
 
     </View> 
@@ -128,4 +112,4 @@ const styles = StyleSheet.create({
 
 
 
-export default NewsCard
+export default OrganizationCard

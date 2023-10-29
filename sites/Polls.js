@@ -7,11 +7,11 @@ import { ScrollView } from 'react-native';
 
 import Nav from '../components/Nav'
 import TopNav from '../components/TopNav'
-import NewsCard from '../components/NewsCard'
 import Search from '../components/Search'
+import PollCard from '../components/PollCard';
 
 
-const News = ({navigation}) => {
+const Polls = ({navigation}) => {
 
 
 const styles = StyleSheet.create({
@@ -77,6 +77,10 @@ const styles = StyleSheet.create({
         width:'100%'
     }
 
+    
+
+    
+
 });
 
 const [data, setData] = useState([]);
@@ -87,7 +91,7 @@ useEffect(()=>{
 
 const fetchData = async () => {
     try {
-      const response = await fetch('http://156.17.72.80:8000/content/news', {
+      const response = await fetch('http://156.17.72.80:8000/content/polls', {
         header: {
             'Accept': 'application/json; charset=UTF-8'
         }
@@ -104,33 +108,22 @@ const fetchData = async () => {
 
 
 
-
-
-
-
   return (
 
     <>
         <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
-                pageTitle="Whats new?" 
-                pageDescription="Read latests news and events in your city"
+                pageTitle="Decide!" 
+                pageDescription="Give your opinion in polls to better your city "
             />  
 
             <Search/>
 
             <View style={styles.articleContainer}>
-                {data.map((article) => {
+                {data.map((poll) => {
                     return (
-                        <NewsCard key={article.id} 
-                                    title={article.title} 
-                                    description={article.description} 
-                                    image={article.image}
-                                    author={article.organization_name} 
-                                    link={"news/" + article.id} 
-                                    navigation={navigation} 
-                        />
+                        <PollCard key={poll.id} title={poll.title} description={poll.description} author={poll.organization_name} image={poll.image} link="foo" navigation={navigation}/>
                     );
                 })}
             </View>
@@ -151,4 +144,4 @@ const fetchData = async () => {
 
 
 
-export default News
+export default Polls

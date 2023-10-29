@@ -5,7 +5,7 @@ import TopNav from '../components/TopNav'
 import AppButton from './AppButton';
 
 
-const NewsCard = ({title, author, description, image, link, navigation, horizontal}) => {
+const PollCard = ({title, author, description, image, link, navigation, horizontal}) => {
 
 
 const styles = StyleSheet.create({
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     article:{
         color:'red',
         backgroundColor:'#ffffff',
-        height:400,
+        height:500,
         borderRadius:15,
         width:350,
         alignSelf:'center',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     articleH:{
         color:'red',
         backgroundColor:'#ffffff',
-        height:400,
+        height:500,
         borderRadius:15,
         width:350,
         alignSelf:'center',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft:10,
         position: 'absolute',
-        top:220
+        top:230
     },
     authorImage: {
         width: 30,
@@ -83,15 +83,28 @@ const styles = StyleSheet.create({
     },
 
     buttonHolder: {
-        width: 300,
+        width: 340,
         alignSelf: 'center',
         marginBottom:10,
         position: 'absolute',
         bottom:0,
         textAlign: 'center',
-        flex: 1,
         justifyContent  : 'center',
         alignContent: 'center',
+        flexDirection: 'row'
+    },
+
+    voteHolder: {
+        flexDirection: 'row',
+        marginLeft:50,
+        justifyContent: 'center',
+        alignContent: 'center'
+    },
+    likeTrue: {
+        borderColor: '#82ED50',
+        borderWidth: 2,
+        borderRadius:20,
+        padding: 5
     }
 
 });
@@ -118,7 +131,12 @@ const styles = StyleSheet.create({
 
         <Text style={styles.articleText}>{description}</Text>
         <View style={styles.buttonHolder}>
-            <AppButton link={link} navigation={navigation} target={'NewsContent'}/>
+            <AppButton link={link} navigation={navigation} target={'Home'}/>
+            <View style={styles.voteHolder}>
+                <View style={styles.likeTrue}>
+                    <Image source={require('../assets/icons/like.png')}/>
+                </View>
+            </View>
         </View>
 
     </View> 
@@ -128,4 +146,4 @@ const styles = StyleSheet.create({
 
 
 
-export default NewsCard
+export default PollCard

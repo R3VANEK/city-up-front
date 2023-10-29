@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, Button} from 'react-native';
 
-const AppButton = ({link}) => {
+const AppButton = ({link, navigation, target}) => {
 
 
 
@@ -24,15 +24,22 @@ const AppButton = ({link}) => {
     });
 
 
-
+    const data = {
+      link: link,
+      navigation: navigation
+    }
 
   return (
-    <View style={[styles.button]} 
-            onPress={()=>{console.log("test")}}
+    <TouchableOpacity onPress={()=>navigation.navigate(target)}>
+    <View style={[styles.button]} // FIX ME - PASSING PARAMS DONT WORK
+            onPress={()=>navigation.navigate(target, {data})}
+
     >
+    
       <Text style={styles.text}>Zobacz więcej</Text>
       
       </View>
+    </TouchableOpacity>
   );
 }
 

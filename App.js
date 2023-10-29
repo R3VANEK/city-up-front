@@ -5,6 +5,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './sites/Home'
 import News from './sites/News'
+import Polls from './sites/Polls'
+import City from './sites/City'
+import NewsContent from './sites/NewsContent'
 
 
 
@@ -13,7 +16,6 @@ const Stack = createNativeStackNavigator();
 export default function App() {
 
 
-// TESTTESTTEST
 
 
   return (  
@@ -21,9 +23,11 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="News" component={News} />
-        <Stack.Screen name="Polls" component={Home} />
-        <Stack.Screen name="City" component={Home} />
+        <Stack.Screen name="Polls" component={Polls} />
+        <Stack.Screen name="City" component={City} />
+        <Stack.Screen name="Contact" component={Home} />
         <Stack.Screen name="Profile" component={Home} />
+        <Stack.Screen name="NewsContent" component={NewsContent} />
       </Stack.Navigator>
       
     </NavigationContainer>

@@ -49,8 +49,9 @@ const TopNav = ({image, pageTitle, pageDescription, showButton, link}) => {
             padding: 20
         },
         shadow: {
-            flex: 1,
-            backgroundColor: 'rgba(0,0,0,0.8)'
+            width: '100%',
+            height:'100%',
+            backgroundColor: 'rgba(0,0,0, 0.4)'
         }
     });
 
@@ -60,8 +61,8 @@ const TopNav = ({image, pageTitle, pageDescription, showButton, link}) => {
   return (
     <View style={[styles.container]}>
       
-        <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-            <View styles={styles.shadow}>
+        <ImageBackground source={image} resizeMode="cover" style={styles.image}   >
+            <View style={styles.shadow}>
 
                 <Image source={require('../assets/logo.png')} style={styles.logo}/>
                 <Text style={styles.pageTitle}>{pageTitle}</Text>
