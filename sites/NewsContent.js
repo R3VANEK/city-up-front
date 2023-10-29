@@ -11,8 +11,9 @@ import OrganizationCard from '../components/OrganizationCard';
 import Search from '../components/Search'
 
 
-const City = ({navigation}) => {
+const NewsContent = ({route}) => {
 
+    // const {link} = route.params;
 
 const styles = StyleSheet.create({
     container: {
@@ -110,24 +111,22 @@ const DATA = [
         <ScrollView>
 
             <TopNav image={require("../assets/wroc2.jpg")} 
-                pageTitle="Lokalne organizacje" 
+                pageTitle={route.params} 
                 pageDescription="Poznaj organizacje działające w Twojej okolicy"
             />  
 
             <Search/>
 
             <View style={styles.articleContainer}>
-                {DATA.map((person) => {
-                    return (
-                        <OrganizationCard name="Rada miasta" description="lorem ipsum sid doloro" link="foo" navigation={navigation}/>
-                    );
-                })}
+                <View>
+                    <Text>{JSON.stringify(route)}</Text>
+                </View>
             </View>
 
         </ScrollView>
 
 
-        <Nav navigation={navigation}/>
+        {/* <Nav navigation={navigation}/> */}
     </>
            
         
@@ -140,4 +139,4 @@ const DATA = [
 
 
 
-export default City
+export default NewsContent

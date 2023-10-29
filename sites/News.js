@@ -119,7 +119,7 @@ const DATA = [
             <View style={styles.articleContainer}>
                 {DATA.map((person) => {
                     return (
-                        <NewsCard title="Przebudowa tramwajów" description="lorem ipsum sid doloro" author="Rada miasta" link="foo" />
+                        <NewsCard title="Przebudowa tramwajów" description="lorem ipsum sid doloro" author="Rada miasta" link="foo" navigation={navigation}/>
                     );
                 })}
             </View>

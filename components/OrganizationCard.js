@@ -5,7 +5,7 @@ import TopNav from '../components/TopNav'
 import AppButton from './AppButton';
 
 
-const OrganizationCard = ({name, description, image, link}) => {
+const OrganizationCard = ({name, description, image, link, navigation}) => {
 
 
 const styles = StyleSheet.create({
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
 
         <Text style={styles.articleText}>{description}</Text>
         <View style={styles.buttonHolder}>
-            <AppButton link={link}/>
+            <AppButton link={link} navigation={navigation} target={'Home'}/>
         </View>
 
     </View> 
